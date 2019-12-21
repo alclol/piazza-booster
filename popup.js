@@ -4,7 +4,6 @@
 
 
 function click(e) {
-    var should_close = true;
     switch (e.target.id) {
         case 'unresolved':
             chrome.tabs.executeScript(null,
@@ -26,31 +25,26 @@ function click(e) {
             break;
         case  'reset':
             chrome.tabs.executeScript({
-                code: "reset();"
+                code: "resetAll();"
             });
             break;
         case 'see-only':
-            should_close = false;
             target = document.getElementById("target").value;
             chrome.tabs.executeScript({
-                file: 'tmp.js',
-            }, function() {
-                chrome.tabs.executeScript({
-                    code: "filterAll('" + target + "');"
-                }, function() { window.close(); });    
+                code: "filterAll('" + target + "');"
             });
             break;
-        default:
-            window.close();
         }
         
-        if (should_close){
-            window.close();
-        }
+        window.close();
+        
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var divs = document.querySelectorAll('div');
+  var divs = document.querySelectorAll('.option');
+  chrome.tabs.executeScript({
+    file: 'tmp.js',
+  });
   for (var i = 0; i < divs.length; i++) {
     divs[i].addEventListener('click', click);
   }

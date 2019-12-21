@@ -25,11 +25,11 @@ function filterAll(target) {
     }
 }
 
-// function resetAll() {
-//     arr = document.querySelectorAll("div.clarifying_discussion.clearFix[data-pats=followup]");
-//     for (i = 0; i < arr.length; i++) {
-//         arr[i].style.display="block";
-//     }
-// }
+function resetAll() {
+    arr = document.querySelectorAll("div.clarifying_discussion.clearFix[data-pats=followup]");
+    for (i = 0; i < arr.length; i++) {
+        arr[i].style.display="block";
+    }
+}
 
 // filterAll("Eric");

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Piazza Helper</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>  
     <style>
     body {
       overflow: hidden;
@@ -9,33 +10,86 @@
       padding: 0px;
       background: white;
     }
-
-    div:first-child {
-      margin-top: 0px;
-    }
-
-    div {
+    .frame {
       cursor: pointer;
       text-align: center;
       padding: 1px 3px;
-      font-family: sans-serif;
+      font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+      color:#fff;
+      background:#494949 url("assets/bg.png") 0 -74px;
       font-size: 1em;
-      width: 100px;
-      margin-top: 1px;
-      background: #cccccc;
+      border:1px solid #000;
+      border-top-color:#838383;
+      width: 180px;
+      height: 30px;
+      font-size: 13px;
     }
-    div:hover {
+    .option {
+      margin-top: 10px;
+    }
+    .hoverable:hover {
       background: #aaaaaa;
     }
-    
+    .first_elem {    
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .last_elem {    
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    div {
+      display: block;
+    }
+    .item-left{
+      border-right:1px solid #838383;
+      margin-top: 6px;
+      width: 90px;
+    }
+    .item-right{
+      width: 80px;
+      margin-top: 8px;
+    }
+    input {
+      -webkit-appearance: none;
+      background: none;
+      border: 0;
+      width: 80px;
+      color: #f3eaea;
+      font-size: 13px;
+      border-bottom: 1px solid #0077FF;
+    }
+    input:focus {
+      background: none;
+      outline: none;
+      color: #5ea8fd;
+    }
+    /* .border {
+      height: 1px;
+      width: 90%;
+      background: #0077FF;
+    } */
+
     </style>
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="unresolved">Unresolved only</div>
-    <div id="no-reply">No replies</div>
-    <input id="target" type="text" name="Select User" value="Eric">
-    <div id="see-only">See Only</div>
-    <div id="reset">Reset</div>
+    <div class="frame first_elem hoverable">
+      <div id="unresolved" class="option">Unresolved Only</div>
+    </div>
+    <div class="frame hoverable">
+      <div id="no-reply" class="option">No Replies</div>
+    </div>
+    <div class="frame ">
+      <div class="item-left"  style="float:left;">
+        <input id="target" type="text" name="Select User" value="Eric"/>
+        <!-- <div class="border"></div> -->
+      </div>
+      <div id="see-only" class="option item-right hoverable" style="float:right;">Only</div>
+    </div>
+    <div class="frame last_elem hoverable">
+      <div id="reset" class="option">Reset</div>
+    </div>
+    
   </body>
 </html>
