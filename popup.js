@@ -24,9 +24,29 @@ function click(e) {
             });
             break;
         case  'reset':
-            chrome.tabs.executeScript({
-                code: "resetAll();"
-            });
+            chrome.tabs.executeScript(null,
+                {code: 'all_replies = document.getElementsByClassName("all_replies");' +
+                    'for (i = 0; i < all_replies.length; i++) {' +
+                    'all_replies[i].style.display = "block";' +
+                    '}'
+                });
+        
+                chrome.tabs.executeScript(null,
+                {code: 'followups = document.getElementsByClassName("clarifying_discussion clearFix");' +
+                        'for (i = 0; i < followups.length; i++) {' +
+                        
+                        'document.getElementsByClassName("clarifying_discussion clearFix")[i].style.display = "block";' +
+                        
+                        '}'
+                });
+        
+                chrome.tabs.executeScript(null,
+                {code: 'all_replies = document.getElementsByClassName("discussion_replies existing_reply clearFix");' +
+                    'for (i = 0; i < all_replies.length; i++) {' + 
+                    'all_replies[i].style.display = "block";' +
+                    '}'
+                });
+            
             break;
         case 'see-only':
             target = document.getElementById("target").value;
@@ -43,7 +63,7 @@ function click(e) {
 document.addEventListener('DOMContentLoaded', function () {
   var divs = document.querySelectorAll('.option');
   chrome.tabs.executeScript({
-    file: 'tmp.js',
+    file: 'utils.js',
   });
   for (var i = 0; i < divs.length; i++) {
     divs[i].addEventListener('click', click);

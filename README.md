@@ -1,8 +1,10 @@
-# piazza-booster
+# piazza-filter
 
-Simple Chrome Extension to make it easy to hide resolved follow ups on Piazza (because who needs to see those?), to hide +1s (they only make looking at actual posts harder), and/or to hide all replies on Piazza (for when you only need to see the actual follow ups). Made to combat the common problem of students +1ing lots of posts, of a thread going super long and making it difficult to find the unresolved follow ups. 
+Simple Chrome Extension to navigate mass piazza responses in one thread..
+Implemented feature:
+    0. Unresolved only := hide resolved posts. Helps instructors to efficiently focus on and kill unresolved ones. 
+    1. No replies := hide long followups on Piazza(for when you only need to see the original follow-ups). 
+    2. Selected user only := only display followups that has an specific user's participance. 
+    3. Reset := reset..
 
-When the feature doesn't exist, you build it. :)
-
-Link to web store: https://chrome.google.com/webstore/detail/piazza-controller/llmmoekdbpmgbfjohhjocjnfdjjieebd
-
+When the feature doesn't exist, you build it. :)        -- Mudit
