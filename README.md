@@ -1,5 +1,6 @@
 # 🌿piazza-filter
 * Simple Chrome Extension to navigate mass piazza responses in one thread..
+Add to Chrome: https://chrome.google.com/webstore/detail/piazza-filter/khgbhkphjfhihhjlfbmdgcgpbohbkdmc?
 
 ### Implemented feature:
 
